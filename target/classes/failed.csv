@@ -1,0 +1,4 @@
+FIRST_NAME, LAST_NAME,PNR, FARE_CLASS, TRAVEL_DATE, PAX, TICKETING_DATE, EMAIL, MOBILE_PHONE, BOOKED_CABIN, ERROR
+Monin, Sankar, PQ234, C, Fri Aug 30 00:00:00 IST 2019, 2, Wed May 22 00:00:00 IST 2019, monin@zzz.com, 9876543211, Economy, PNR invalid
+Radhika, Suresh, ZZZ345, T, Fri May 31 00:00:00 IST 2019, 4, Tue May 21 00:00:00 IST 2019, radhika@zzz, 9876543212, Business, Email invalid
+Kalyani, Ben, A1B2C3, M, Tue Apr 30 00:00:00 IST 2019, 1, Tue May 21 00:00:00 IST 2019, kben@zzz.com, 9876543213, Premium Economy , Travel date invalid
