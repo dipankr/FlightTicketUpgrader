@@ -13,7 +13,7 @@ import java.util.Date;
 public class Ticket {
     private String first, last, pnr, email, phone;
     private Character fareClass;
-    private Date travel_date, ticket_date;
+    private Date travel_date, ticket_date, dob;
     private Integer pax;
     private CabinType cabin;
 }

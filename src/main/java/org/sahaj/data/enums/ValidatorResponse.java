@@ -6,7 +6,8 @@ public enum ValidatorResponse {
     TRAVEL_DATE_INVALID("Travel date invalid"),
     EMAIL_INVALID("Email invalid"),
     PHONE_INVALID("Phone invalid"),
-    PNR_INVALID("PNR invalid");
+    PNR_INVALID("PNR invalid"),
+    DOB_INVALID("Under age");
 
     private String message;
 

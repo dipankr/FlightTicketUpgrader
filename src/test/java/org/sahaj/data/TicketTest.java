@@ -26,6 +26,7 @@ class TicketTest {
                 .ticket_date(TicketUtil.getDateObject("2019-05-22"))
                 .pax(1)
                 .cabin(CabinType.valueOf("Economy".toUpperCase()))
+                .dob(TicketUtil.getDateObject("2010-05-22"))
                 .build();
     }
 
@@ -38,5 +39,10 @@ class TicketTest {
     void testDatesSetAreCorrect() {
         assertTrue(ticket.getTravel_date().equals(ticket.getTravel_date()) ||
                 ticket.getTravel_date().after(ticket.getTicket_date()));
+    }
+
+    @Test
+    void testDOB(){
+        assertTrue(ticket.getTravel_date().after(ticket.getDob()));
     }
 }

@@ -26,6 +26,7 @@ class TicketValidatorTest {
                 .ticket_date(TicketUtil.getDateObject("2019-05-22"))
                 .pax(1)
                 .cabin(CabinType.valueOf("Economy".toUpperCase()))
+                .dob(TicketUtil.getDateObject("2019-05-22"))
                 .build();
     }
 
@@ -56,6 +57,7 @@ class TicketValidatorTest {
                 .ticket_date(TicketUtil.getDateObject("2019-05-31"))
                 .pax(1)
                 .cabin(CabinType.valueOf("invalid".toUpperCase()))
+                .dob(TicketUtil.getDateObject("2010-05-22"))
                 .build();
     }
 
@@ -86,5 +88,12 @@ class TicketValidatorTest {
         assertFalse(EmailValidator.isValid(ticket));
         assertFalse(PhoneValidator.isValid(ticket));
         assertFalse(PNRValidator.isValid(ticket));
+    }
+
+    @Test
+    void testDOBValidator() throws ParseException {
+        setupWithInvalidData();
+
+        assertFalse(DOBValidator.isValid(ticket));
     }
 }

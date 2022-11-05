@@ -80,6 +80,7 @@ public class TicketInputReader {
                 .email(ticketItems[TicketItems.EMAIL.ordinal()])
                 .phone(ticketItems[TicketItems.MOBILE.ordinal()])
                 .cabin(TicketUtil.getCabinType(ticketItems[TicketItems.CABIN.ordinal()]))
+                .dob(TicketUtil.getDateObject(ticketItems[TicketItems.DOB.ordinal()]))
                 .build();
         return ticket;
     }

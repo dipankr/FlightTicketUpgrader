@@ -52,11 +52,11 @@ public class TicketOutputWriter {
     }
 
     private void setupSuccessHeader() {
-        success.println("FIRST_NAME, LAST_NAME, PNR, FARE_CLASS, TRAVEL_DATE, PAX, TICKETING_DATE, EMAIL, MOBILE_PHONE, BOOKED_CABIN, DISCOUNT_CODE");
+        success.println("FIRST_NAME, LAST_NAME, PNR, FARE_CLASS, TRAVEL_DATE, PAX, TICKETING_DATE, EMAIL, MOBILE_PHONE, BOOKED_CABIN, DOB, DISCOUNT_CODE");
     }
 
     private void setupFailedHeader() {
-        failed.println("FIRST_NAME, LAST_NAME,PNR, FARE_CLASS, TRAVEL_DATE, PAX, TICKETING_DATE, EMAIL, MOBILE_PHONE, BOOKED_CABIN, ERROR");
+        failed.println("FIRST_NAME, LAST_NAME,PNR, FARE_CLASS, TRAVEL_DATE, PAX, TICKETING_DATE, EMAIL, MOBILE_PHONE, BOOKED_CABIN, DOB, ERROR");
     }
 
     public void writeOutput(String error, Ticket t) {
@@ -68,12 +68,12 @@ public class TicketOutputWriter {
 
     private void writeSuccess(Ticket t) {
         StringBuilder output = getTicketStringBuilder(t).append(getDiscountCode(t.getFareClass()));
-        success.println(output.toString());
+        success.println(output);
     }
 
     private void writeFailed(Ticket t, String error) {
         StringBuilder output = getTicketStringBuilder(t).append(error);
-        failed.println(output.toString());
+        failed.println(output);
     }
 
     private StringBuilder getTicketStringBuilder(Ticket t) {
@@ -87,7 +87,8 @@ public class TicketOutputWriter {
                 .append(TicketUtil.getDateString(t.getTicket_date())).append(", ")
                 .append(t.getEmail()).append(", ")
                 .append(t.getPhone()).append(", ")
-                .append(formatCabin(t.getCabin().name())).append(", ");
+                .append(formatCabin(t.getCabin().name())).append(", ")
+                .append(TicketUtil.getDateString(t.getDob())).append(", ");
     }
 
     private String formatCabin(String cabin) {

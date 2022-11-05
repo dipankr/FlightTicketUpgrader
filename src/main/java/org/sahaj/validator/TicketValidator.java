@@ -22,6 +22,9 @@ public class TicketValidator implements Validator {
         if (!PNRValidator.isValid(t))
             return ValidatorResponse.PNR_INVALID.getMessage();
 
+        if (!DOBValidator.isValid(t))
+            return ValidatorResponse.DOB_INVALID.getMessage();
+
         return ValidatorResponse.All_VALID.getMessage();
     }
 }

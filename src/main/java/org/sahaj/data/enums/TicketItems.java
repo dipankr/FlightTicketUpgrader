@@ -10,5 +10,6 @@ public enum TicketItems {
     TICKETING_DATE,
     EMAIL,
     MOBILE,
-    CABIN
+    CABIN,
+    DOB
 }
